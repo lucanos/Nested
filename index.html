@@ -46,6 +46,15 @@
   &lt;div class="box size22"&gt;&lt;/div&gt;
   ...
 &lt;/div&gt;
+...
+&lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"&gt; &lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+$(document).ready(function(){
+
+  $("#container").nested();
+
+});
+&lt;/script&gt;
 </code></pre>
 
 <p>Sizing of items are handled by adding <em>sizeWH</em> where <em>W</em> is the number of columns the box shall use and <em>H</em> is the number of rows the box shall use. E.g <em>size15</em> equals width: <em>1</em> column and height: <em>5</em> rows The base column and row size is set by the <em>minWidth</em> option.</p>
