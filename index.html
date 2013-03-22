@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Nested : Gap free multi column grid" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Nested</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/lucanos/Nested">View on GitHub</a>
+
+          <h1 id="project_title">Nested</h1>
+          <h2 id="project_tagline">Gap free multi column grid</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/lucanos/Nested/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/lucanos/Nested/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>What is Nested?</h1>
+
+<p>Nested is a jQuery plugin which allows you to create multi-column, dynamic grid layouts. Unlike other libraries and jQuery plugins similar to Nested, this is (as far I as I’ve know) the first script out there that allows you a complete gap-free layout. How is this done? Nested does three things. It creates a matrix of all elements and creates a multi column grid, similar to other libraries and scripts out there. Then it scans the maxtric for gaps and tries to fill them by reordering the elements. This is exactly how I’ve seen other newer libraries, scripts and modifications behave but if you stop here, the result will sometime leave unwanted gaps as well. That is why I added the last step, an option to resize any element at the bottom of the grid that is bigger (or smaller if you prefer) than the gap to make the grid completely gap-free.</p>
+
+<h2>Markup</h2>
+
+<p>Use a container element with a group of child items that use the chosen option selector setting (default: .box).</p>
+
+<pre><code>&lt;div id="container"&gt;
+  &lt;div class="box size11"&gt;&lt;/div&gt;
+  &lt;div class="box size12"&gt;&lt;/div&gt;
+  &lt;div class="box size21"&gt;&lt;/div&gt;
+  &lt;div class="box size22"&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+
+<p>Sizing of items are handled by adding <em>sizeWH</em> where <em>W</em> is the number of columns the box shall use and <em>H</em> is the number of rows the box shall use. E.g <em>size15</em> equals width: <em>1</em> column and height: <em>5</em> rows The base column and row size is set by the <em>minWidth</em> option.</p>
+
+<h2>Plugin Options</h2>
+
+<h3>selector</h3>
+
+<p><em>Default '.box'</em></p>
+
+<pre><code>$("#container").nested({selector: '.box'});
+</code></pre>
+
+<h3>minWidth</h3>
+
+<p><em>Default 50</em></p>
+
+<pre><code>$("#container").nested({minWidth: 100});
+</code></pre>
+
+<h3>minColumn</h3>
+
+<p><em>Default 1</em></p>
+
+<pre><code>$("#container").nested({minColumn: 1});
+</code></pre>
+
+<h3>gutter</h3>
+
+<p><em>Default 1</em></p>
+
+<pre><code>$("#container").nested({gutter: 1});
+</code></pre>
+
+<h3>resizeToFit</h3>
+
+<p><em>Default true</em></p>
+
+<p>If true, any box bigger than the gap will be resized to fill the gap.</p>
+
+<pre><code>$("#container").nested({resizeToFit: true});
+</code></pre>
+
+<h3>resizeToFitOptions</h3>
+
+<p><em>Default option below</em></p>
+
+<h3>resizeAny</h3>
+
+<p><em>Default true</em></p>
+
+<p>If true, any box bigger or smaller than the gap will be resized to fill the gap.</p>
+
+<pre><code>$("#container").nested({
+  resizeToFit: true,
+  resizeToFitOptions: { 
+    resizeAny: true
+  }
+});
+</code></pre>
+
+<h3>animate</h3>
+
+<p><em>Default false</em></p>
+
+<pre><code>$("#container").nested({animate: false});
+</code></pre>
+
+<h3>animationOptions</h3>
+
+<p><em>Default options below</em></p>
+
+<h3>speed</h3>
+
+<p><em>Default 20</em></p>
+
+<p>A number of milliseconds to render each object (e.g. 200).</p>
+
+<h3>duration</h3>
+
+<p><em>Default 100</em></p>
+
+<p>A number of milliseconds to run the animation (e.g. 300).</p>
+
+<h3>queue</h3>
+
+<p><em>Default true</em></p>
+
+<p>Queued objects or not.</p>
+
+<h3>complete</h3>
+
+<p><em>Default function(){}</em></p>
+
+<p>A function to be executed whenever the animation completes.</p>
+
+<pre><code>$("#container").nested({
+  animate: true,
+  animationOptions: {
+    speed: 100,
+    duration: 200,
+    queue: true,
+    complete: onComplete
+  }
+});
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Nested maintained by <a href="https://github.com/lucanos">lucanos</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
